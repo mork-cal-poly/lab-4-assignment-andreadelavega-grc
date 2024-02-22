@@ -9,12 +9,15 @@ function setup() {
 
 function draw() {
   background(220);
-  drawCreature(0, 0);
+  drawCreature(160, 200, 1);
+  drawCreature(260, 300, 0.6);
+  
 }
-function drawCreature(x, y){
+function drawCreature(x, y, sc){
   push();
       translate(x, y);
-      translate(225, 270); 
+      scale(sc);
+      
       //beak 
         noStroke();
         fill('#5F61CF');
