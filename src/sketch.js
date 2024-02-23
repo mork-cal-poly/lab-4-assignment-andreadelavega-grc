@@ -30,7 +30,7 @@ function draw() {
   if (clicked){
   drawCreature(260, bird2Y, 0.6);
   bird2Y = bird2Y - 1;
-  } else drawCreature(260, 360, 0.6, 8);
+  } else drawCreature(260, 360, 0.6);
   
 }
 
