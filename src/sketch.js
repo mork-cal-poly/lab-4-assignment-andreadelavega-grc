@@ -1,6 +1,6 @@
 
 let bird1X = 180; 
-let bird2Y = 400;
+let bird2Y = 360;
 let clicked = false;
 
 function setup() {
@@ -20,13 +20,15 @@ function draw() {
     bird1X = bird1X - 1;
   }else drawCreature(180, 200, 1);
   // ------ BIRD 2 -------
+  if (clicked){
   drawCreature(260, bird2Y, 0.6);
   bird2Y = bird2Y - 1;
+  } else drawCreature(260, 360, 0.6);
   
 }
 
 function mouseClicked(){
-  if (100 < mouseX && mouseX < 300 && 50 < mouseY && mouseY < 220)
+  if (210 < mouseX && mouseX < 330 && 260 < mouseY && mouseY < 390)
   clicked = true;
 }
 function drawCreature(x, y, sc){
