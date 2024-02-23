@@ -15,9 +15,9 @@ function setup() {
 function draw() {
   drawBackground(0, 0);
   // ------ BIRD 1 -------
-  if (clicked){
+  if (bird2Y < 280){
   drawCreature(bird1X, 200, 1);
-    bird1X = bird1X - 1;
+    bird1X = bird1X - 1.5;
   }else drawCreature(180, 200, 1);
   // ------ BIRD 2 -------
   if (clicked){
