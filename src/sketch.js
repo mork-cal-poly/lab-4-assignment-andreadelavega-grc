@@ -1,5 +1,6 @@
 
 let bird1X = 400; 
+let bird2Y = 400;
 
 function setup() {
   // These lines are fitting our canvas
@@ -12,9 +13,12 @@ function setup() {
 
 function draw() {
   drawBackground(0, 0);
+  // ------ BIRD 1 -------
   drawCreature(bird1X, 200, 1);
     bird1X = bird1X - 1;
-  drawCreature(260, 300, 0.6);
+  // ------ BIRD 2 -------
+  drawCreature(260, bird2Y, 0.6);
+  bird2Y = bird2Y - 1;
   
 }
 function drawCreature(x, y, sc){
