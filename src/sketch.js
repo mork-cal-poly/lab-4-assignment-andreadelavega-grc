@@ -1,3 +1,6 @@
+
+let bird1X = 400;
+
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -9,7 +12,8 @@ function setup() {
 
 function draw() {
   background(220);
-  drawCreature(160, 200, 1);
+  drawCreature(bird1X, 200, 1);
+    bird1X = bird1X - 1
   drawCreature(260, 300, 0.6);
   
 }
