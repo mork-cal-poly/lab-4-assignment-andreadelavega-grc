@@ -1,5 +1,7 @@
 
 let bird1X = 180; 
+let bird1Y = 200;
+let bird1SC = 1;
 let bird2Y = 360;
 let clicked = false;
 
@@ -16,14 +18,19 @@ function draw() {
   drawBackground(0, 0);
   // ------ BIRD 1 -------
   if (bird2Y < 280){
-  drawCreature(bird1X, 200, 1);
+  drawCreature(bird1X, bird1Y, bird1SC);
     bird1X = bird1X - 1.5;
+    bird1Y = bird1Y - 1.5; 
+  if (bird1SC >= 0){
+    bird1SC = bird1SC - 0.008;
+  }
+    
   }else drawCreature(180, 200, 1);
   // ------ BIRD 2 -------
   if (clicked){
   drawCreature(260, bird2Y, 0.6);
   bird2Y = bird2Y - 1;
-  } else drawCreature(260, 360, 0.6);
+  } else drawCreature(260, 360, 0.6, 8);
   
 }
 
