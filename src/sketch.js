@@ -16,6 +16,12 @@ function setup() {
 
 function draw() {
   drawBackground(0, 0);
+  // ------ HIDDEN DOG --
+  push() ;
+    drawDog(180, 160, color(0, 0, 90, 200), color(50, 90, 140, 200));
+  pop() ;
+
+
   // ------ BIRD 1 -------
   if (bird2Y < 280){
   drawCreature(bird1X, bird1Y, bird1SC);
@@ -23,7 +29,7 @@ function draw() {
     bird1Y = bird1Y - 1.5; 
   if (bird1SC >= 0){
     bird1SC = bird1SC - 0.008;
-  }
+  } 
     
   }else drawCreature(180, 200, 1);
   // ------ BIRD 2 -------
@@ -31,9 +37,8 @@ function draw() {
   drawCreature(260, bird2Y, 0.6);
   bird2Y = bird2Y - 1;
   } else drawCreature(260, 360, 0.6);
-  
-}
 
+}
 function mouseClicked(){
   if (210 < mouseX && mouseX < 330 && 260 < mouseY && mouseY < 390)
   clicked = true;
@@ -95,4 +100,74 @@ function drawBackground(x, y){
        rotate(45);
        triangle(320, 30, 220, 120, 300, 80);
   pop();
+}
+
+function drawDog(x, y, colorBrow, colorTummy) {
+  push();
+
+//translate by whatever args passed in
+translate(x, y);
+scale(0.2);
+rotate(-PI/12);
+
+fill(0, 0, 0);
+noStroke()
+//translate (x, y)
+
+//body
+fill(230, 230, 255);
+noStroke();
+rect(-20, -30, 50, 250);
+rect(80, -30, 50, 250);
+rect(30, -10, 50, 150);
+fill(colorTummy);
+ellipse(60, 10, 80, 150);
+
+
+//ears
+fill(255, 255, 248);
+noStroke();
+triangle(-60, -100, -40, -260, -10, -150);
+triangle(80, -160, 110, -290, 130, -140);
+
+//head
+quad(-60, -100, -10, -150, 80, -160, 130, -140, 140, -20);
+quad(-60, -100, -50, -50, 144, -50, 130, -140);
+//chin
+quad(160, -80, 170, 5, 20, 20, -50, -50, -140, -110);
+triangle(160, -80, 130, -90, 130, -70);
+
+//nose
+fill(0, 0, 50, 256);
+ellipse(100, -60, 90, 40);
+
+//eyes
+fill(0, 0, 0);
+ellipse(20, -90, 20);
+ellipse(100, -100, 20);
+
+//eyebrows
+fill(colorBrow);
+ellipse(10, -120, 30, 20);
+ellipse(100, -125, 30, 20);
+
+
+//mouth
+stroke(0, 0, 90, 255);
+noFill();
+strokeWeight(8);
+arc(70, -35, 60, 40, 1/9, 3*PI/4);
+arc(125, -40, 60, 40, PI/3, 5*PI/6);
+
+
+//arms
+push();
+  fill(230, 230, 255);
+  noStroke();
+  rotate(-PI/4);
+  ellipse(-75, 0, 150, 30);
+  rotate(PI/4);
+  ellipse(180, 30, 150, 28);
+pop();
+
 }
